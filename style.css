@@ -27,12 +27,36 @@ header h1{
 body{
     background-color: rgb(66, 66, 66);
 }
-/* botones */
 
+main{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    margin-top: 10rem;
+}
+
+/* botones */
+#boton_jugar{
+    margin-top: 10%;
+}
+
+
+#circulo_principal{
+    width: 250px;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+    transform: rotate(45deg);
+}
+
+/* colores */
 #amarillo{
     width: 100px;
     height: 100px;
-    background-color: yellow;
+    background-color: rgb(251, 255, 0);
+    filter: brightness(10%);
 }
 
 #verde{
@@ -53,8 +77,3 @@ body{
     background-color: blue;
 }
 
-#circulo_central{
-    width: 100px;
-    height: 100px;
-    background-color: black;
-}
