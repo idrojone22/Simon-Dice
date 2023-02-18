@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Roboto;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+/* header */
+
+header{
+    background-color: white;
+}
+
+header h1{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+body{
+    background-color: rgb(66, 66, 66);
+}
+/* botones */
+
+#amarillo{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+}
+
+#verde{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+
+#rojo{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+#azul{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+
+#circulo_central{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}
