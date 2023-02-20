@@ -55,25 +55,28 @@ main{
 #amarillo{
     width: 100px;
     height: 100px;
-    background-color: rgb(251, 255, 0);
-    filter: brightness(10%);
+    background-color: rgb(161, 163, 28);
+    filter: brightness(100%);
 }
 
 #verde{
     width: 100px;
     height: 100px;
     background-color: green;
+    filter: brightness(100%);
 }
 
 #rojo{
     width: 100px;
     height: 100px;
-    background-color: red;
+    background-color: rgb(129, 49, 49);
+    filter: brightness(100%);
 }
 
 #azul{
     width: 100px;
     height: 100px;
-    background-color: blue;
+    background-color: rgb(27, 27, 141);
+    filter: brightness(100%);
 }
 
