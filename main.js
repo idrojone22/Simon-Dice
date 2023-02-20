@@ -1,4 +1,5 @@
 let colores = [amarillo, verde, rojo, azul];
+let orden = []
 let numeroNivel = 1;
 console.log(colores)    
 
@@ -16,7 +17,7 @@ function jugar() {
 }
 
 function iluminar_carta() {
-
+    
     colores[0].style.filter = 'brightness(200%)'
 
     setTimeout(() => {
@@ -36,8 +37,40 @@ function iluminar_carta() {
 
     setTimeout(() => {
         colores[3].style.filter = 'brightness(100%)'
+        apretar_colors()
     }, 4000)
+} 
+
+function apretar_colors() {
+    
+    amarillo.addEventListener('click', () => { 
+        orden.push(amarillo) 
+        console.log(orden)
+    })
+
+    verde.addEventListener('click', () => { 
+        orden.push(verde)
+        console.log(orden)
+    })
+    rojo.addEventListener('click', () => { 
+        orden.push(rojo)
+        console.log(orden)
+    })
+    azul.addEventListener('click', () => { 
+        orden.push(azul)
+        console.log(orden)
+    })
 }
+
+function comparar_colors() {
+    
+    if (colores == orden) {
+        alert('has ganado')
+    } else {
+        console.log('jijijija')
+    }
+}
+
 
 
 
