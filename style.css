@@ -47,7 +47,7 @@ main{
     height: 200px;
     display: flex;
     flex-wrap: wrap;
-    gap: 0px;
+    gap: 10px;
     transform: rotate(45deg);
 }
 
