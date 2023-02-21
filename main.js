@@ -80,19 +80,36 @@ function donar_colors(num, color) {
     }
 }
 
-function donarr_colors() {
-    let cont = 0
-    donarr_colors(orden[cont], "", 750)
-    cont++
+let cont = 0
+cont++
 
-    let interval = setInterval(() => {
-        donar_colors(orden[cont], "", 750)
-        cont++
-        if (cont == orden.length)
-        clearInterval(interval)
-        comparar()
-    }, 1000)
-}
+let interval = setInterval(() => {
+    donar_colors(orden[cont], "", 750)
+    cont++
+    if (cont == orden.length)
+    clearInterval(interval)
+    let span = document.querySelectorAll('span')
+    span.forEach(e => {
+        e.addEventListener('click', () => {
+            donar_colors("", e.id)
+
+            if(e.id == orden[cont]) {
+                cont++
+            } else {
+                boton_jugar.innerHTML = 'volver a jugar'
+                boton_jugar.style.opacity = '100'
+                orden = []
+                numeroNivel = 0
+            }
+
+            if (cont == orden.length) {
+                boton_jugar.innerHTML = 'siguiente nivel'
+                cont = 0
+            }
+        })
+    })
+}, 1000)
+
 
 
 
