@@ -48,7 +48,6 @@ main{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    transform: rotate(45deg);
 }
 
 /* colores */
@@ -77,6 +76,20 @@ main{
     width: 100px;
     height: 100px;
     background-color: rgb(27, 27, 141);
+    filter: brightness(100%);
+}
+
+#morado{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(132, 27, 141);
+    filter: brightness(100%);
+}
+
+#naranja{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(141, 78, 27);
     filter: brightness(100%);
 }
 
