@@ -48,6 +48,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    transform: rotate(45deg);
 }
 
 /* colores */
