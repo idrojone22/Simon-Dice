@@ -4,6 +4,20 @@ let comprobar = [] // array on es guarde els cuadrats que em presioant
 let numeroNivell = 1
 let contador = 0
 
+colores.forEach(e => {
+    e.addEventListener('click', () => {
+        e.style.filter = 'brightness(200%)'
+        setTimeout(() => {
+            e.style.filter = 'brightness(100%)' 
+        },500)
+        contador++
+        comprobar.push(e);
+        if (contador == numeroNivell) {
+            comprobarCartes()
+        }
+    })
+})
+
 boton_jugar.addEventListener('click', () => {
     randomColors()
 })
@@ -28,20 +42,6 @@ function randomColors() {
         }
     }, 1000)
 }       
-
-colores.forEach(e => {
-    e.addEventListener('click', () => {
-        e.style.filter = 'brightness(200%)'
-        setTimeout(() => {
-            e.style.filter = 'brightness(100%)' 
-        },500)
-        contador++
-        comprobar.push(e);
-        if (contador == numeroNivell) {
-            comprobarCartes()
-        }
-    })
-})
 
 function comprobarCartes() {
     if (JSON.stringify(orden) === JSON.stringify(comprobar)) {
