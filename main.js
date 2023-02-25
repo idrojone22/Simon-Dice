@@ -1,42 +1,61 @@
 let colores = [amarillo, verde, rojo, azul]
-let orden = []
+let orden = [] // -> array on es guarda el orden en el que s'han iluminat els colors
+let comprobar = [] // array on es guarde els cuadrats que em presioant 
+let numeroNivell = 1
+let contador = 0
 
 boton_jugar.addEventListener('click', () => {
     randomColors()
 })
 
-function randomColors() {
-    let contador = 0
+function random() {
+    let random = Math.floor(Math.random() * 4) // ens dona un numero random
+    return random
+}
 
-    let interval = setInterval(() => {
-        let randoms = random()
-        colores[randoms].style.filter = 'brightness(200%)'
-        orden.push(colores)
-        console.log(orden[randoms])
+function randomColors() {
+    let cont = 0
+    let interval = setInterval(() => { // interval per a que tarde 1 segon en tornar a executar el códic 
+        let numero = random()
+        colores[numero].style.filter = 'brightness(200%)' // utilitzem el numero random per iluminar el color
+        orden.push(colores[numero]) // calvem el numero iluminat en el array 
         setTimeout(() => {
-            colores[randoms].style.filter = 'brightness(100%)' 
+            colores[numero].style.filter = 'brightness(100%)'  // apaguem el botó
         },500)
-        contador++;
-        if (contador == 4) {
+        cont++;
+        if (cont == numeroNivell) {
             clearInterval(interval)
         }
     }, 1000)
 }       
 
-function random() {
-    let random = Math.floor(Math.random() * 4)
-    return random
-}
-
-/*add event listener*/
-let iluminar = document.querySelectorAll('span')
-iluminar.forEach(e => {
+colores.forEach(e => {
     e.addEventListener('click', () => {
         e.style.filter = 'brightness(200%)'
         setTimeout(() => {
             e.style.filter = 'brightness(100%)' 
-        },1000)
+        },500)
+        contador++
+        comprobar.push(e);
+        if (contador == numeroNivell) {
+            comprobarCartes()
+        }
     })
 })
 
-
+function comprobarCartes() {
+    if (JSON.stringify(orden) === JSON.stringify(comprobar)) {
+        setTimeout(() => {
+            alert('Has ganado')
+            boton_jugar.innerHTML = 'Siguiente Nivel'
+        }, 1000)
+        numeroNivell++
+        contador = 0
+    } else {
+        setTimeout(() => {
+            alert('Has perdido')
+            boton_jugar.innerHTML = 'Intentalo de nuevo'
+        }, 1000)
+        contador = 0
+    }
+}
