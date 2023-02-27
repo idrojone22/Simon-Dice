@@ -45,11 +45,12 @@ function randomColors() {
 
 function comprobarCartes() {
     if (JSON.stringify(orden) === JSON.stringify(comprobar)) {
+        numeroNivell++
         setTimeout(() => {
             alert('Has ganado')
             boton_jugar.innerHTML = 'Siguiente Nivel'
+            nivel.innerHTML = `${numeroNivell}`
         }, 1000)
-        numeroNivell++
         contador = 0
     } else {
         setTimeout(() => {
