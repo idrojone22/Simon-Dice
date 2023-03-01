@@ -13,6 +13,8 @@ colores.forEach(e => {
         contador++
         comprobar.push(e);
         if (contador == numeroNivell) {
+            console.log(orden)
+            console.log(comprobar)
             comprobarCartes()
         }
     })
@@ -43,20 +45,59 @@ function randomColors() {
     }, 1000)
 }       
 
-function comprobarCartes() {
-    if (JSON.stringify(orden) === JSON.stringify(comprobar)) {
-        numeroNivell++
-        setTimeout(() => {
-            alert('Has ganado')
-            boton_jugar.innerHTML = 'Siguiente Nivel'
-            nivel.innerHTML = `${numeroNivell}`
-        }, 1000)
-        contador = 0
-    } else {
-        setTimeout(() => {
-            alert('Has perdido')
-            boton_jugar.innerHTML = 'Intentalo de nuevo'
-        }, 1000)
-        contador = 0
-    }
-}
+function comprobarCartes(orden, comprobar) {
+    let verdadero = true
+    for (let i = 0; i < orden; i++) {
+        if (orden[i] !== comprobar[i]) {
+            setTimeout(() => {
+                alert('Has perdido');
+                boton_jugar.innerHTML = 'Intentalo de nuevo';
+            }, 1000)
+            contador = 0;
+            verdadero = false
+        };
+    };
+    verdadero ? setTimeout(() => {alert('Has perdido'); boton_jugar.innerHTML = 'Intentalo de nuevo'}, 1000) : null
+};
+
+
+
+// setTimeout(() => {
+//     alert('Has perdido');
+//     boton_jugar.innerHTML = 'Intentalo de nuevo';
+// }, 1000);
+// contador = 0;
+
+
+
+
+
+    // if (JSON.stringify(orden) === JSON.stringify(comprobar)) {
+    //     numeroNivell++
+    //     setTimeout(() => {
+    //         alert('Has ganado')
+    //         boton_jugar.innerHTML = 'Siguiente Nivel'
+    //         nivel.innerHTML = `${numeroNivell}`
+    //     }, 1000)
+    //     contador = 0
+    // } else {
+    //     setTimeout(() => {
+    //         alert('Has perdido')
+    //         boton_jugar.innerHTML = 'Intentalo de nuevo'
+    //     }, 1000)
+    //     contador = 0
+    // }
+
+
+
+// function arraysSonIguales(array1, array2) {
+//     if (array1.length !== array2.length) {
+//       return false; // si los arrays tienen distinta longitud, no son iguales
+//     }
+//     for (let i = 0; i < array1.length; i++) {
+//       if (array1[i] !== array2[i]) {
+//         return false; // si algún elemento no es igual en ambos arrays, no son iguales
+//       }
+//     }
+//     return true; // si llegamos hasta aquí, los arrays son iguales
+//   }
